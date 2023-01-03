@@ -1,5 +1,5 @@
 <h1 align>Java Competence Map 🖐</h1>
-<h3>🟠 A list and study of topics Java developers of different levels of competence should be knowledgeable about 👇</h3>
+<h2>🟠A list and study of topics Java developers of different levels of competence should be knowledgeable about👇</h2>
 <h3><a href="https://coursehunter.net/source/udemy/java"><strong>Java Udemy Education »</strong></a></h3>
 <img src="images of readme file/0.png" alt="Logo">
 <img src="images of readme file/1.png" alt="Logo">
