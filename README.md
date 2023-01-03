@@ -8,4 +8,3 @@
 <img src="images of readme file/4.png" alt="Logo">
 <img src="images of readme file/5.png" alt="Logo">
 <img src="images of readme file/6.png" alt="Logo">
-<img src="images of readme file/6.png" alt="Logo">
