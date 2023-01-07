@@ -34,7 +34,7 @@ public class Main {
 }
 
 class Call {
-    private Lock lock = new ReentrantLock();
+    private final Lock lock = new ReentrantLock();
 
     void mobileCall() {
         lock.lock();
@@ -42,6 +42,7 @@ class Call {
             System.out.println("Mobile call starts ...");
             Thread.sleep(3000);
             System.out.println("Mobile call ends!");
+            System.out.println("------------------");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {
@@ -55,6 +56,7 @@ class Call {
             System.out.println("Skype call starts ...");
             Thread.sleep(5000);
             System.out.println("Skype call ends!");
+            System.out.println("------------------");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {
@@ -68,6 +70,7 @@ class Call {
             System.out.println("WhatApp call starts ...");
             Thread.sleep(7000);
             System.out.println("WhatApp call ends!");
+            System.out.println("------------------");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {

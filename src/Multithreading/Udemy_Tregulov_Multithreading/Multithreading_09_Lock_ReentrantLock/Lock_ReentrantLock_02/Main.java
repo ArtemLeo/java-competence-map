@@ -4,13 +4,11 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Lock lock = new ReentrantLock();
         new Employee("Tom", lock);
-        new Employee("Zoe", lock);
-        new Employee("Den", lock);
         new Employee("Anna", lock);
-        new Employee("Eva", lock);
+        new Employee("John", lock);
     }
 }
 
@@ -27,31 +25,33 @@ class Employee extends Thread {
     @Override
     public void run() {
         try {
-            System.out.println(name + " waiting...");
+            System.out.println(name + " waiting ...");
             lock.lock();
-            System.out.println(name + " uses an ATM");
+            System.out.println(name + " uses an ATM!");
             Thread.sleep(2000);
-            System.out.println(name + " stopped using an ATM");
+            System.out.println(name + " stopped using an ATM!");
+            System.out.println("----------------------------");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {
             lock.unlock();
         }
 
-        // Method tryLock ( if -else)");
-
+        // Method tryLock (if-else);
         if (lock.tryLock())
             try {
-                System.out.println(name + " uses an ATM");
+                System.out.println(name + " again uses an ATM!");
                 Thread.sleep(2000);
-                System.out.println(name + " stopped using an ATM");
+                System.out.println(name + " again stopped using an ATM!");
+                System.out.println("----------------------------");
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             } finally {
                 lock.unlock();
             }
         else {
-            System.out.println(name + "will not wait until the ATM is free");
+            System.out.println(name + " won't wait for the ATM to become free!");
+            System.out.println("----------------------------");
         }
     }
 }
